@@ -6,32 +6,32 @@ export default function Hero() {
     <section className="relative overflow-hidden border-b border-[var(--border)] bg-[var(--bg)]">
       <div className="pointer-events-none absolute inset-0 hero-backdrop" aria-hidden />
       <div className="pointer-events-none absolute inset-0 hero-grid" aria-hidden />
-      <div className="container-12 relative grid gap-12 py-16 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+      <div className="container-12 relative grid gap-10 py-14 sm:gap-12 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-16">
         <div className="reveal">
           <div className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-[13px] font-semibold text-[var(--muted-text)] shadow-sm">
             Enterprise mobility platform
           </div>
 
-          <h1 className="mt-4 max-w-[36rem] font-semibold tracking-tight">
+          <h1 className="mt-4 max-w-[36rem] text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
             Citywide mobility and delivery, governed by one platform.
           </h1>
 
-          <p className="mt-4 max-w-[40rem] text-base text-[var(--muted-text)]">
+          <p className="mt-4 max-w-[40rem] text-sm text-[var(--muted-text)] sm:text-base">
             GOBAI unifies customer booking, merchant fulfillment, and driver
             operations with real-time dispatch, audit-ready tracking, and SLA
             monitoring.
           </p>
 
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
             <Link
               href={`mailto:${site.contact.email}?subject=GOBAI%20Pilot%20Request`}
-              className="inline-flex h-11 items-center rounded-2xl bg-[var(--primary)] px-5 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-[var(--primary-hover)] active:scale-[0.99]"
+              className="w-full rounded-2xl bg-[var(--primary)] px-5 py-3 text-center text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-[var(--primary-hover)] active:scale-[0.99] sm:w-auto"
             >
               Request a pilot
             </Link>
             <Link
               href="/#platform"
-              className="inline-flex h-11 items-center rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 text-sm font-semibold transition duration-200 hover:bg-[var(--muted-surface)] active:scale-[0.99]"
+              className="w-full rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-center text-sm font-semibold transition duration-200 hover:bg-[var(--muted-surface)] active:scale-[0.99] sm:w-auto"
             >
               View platform
             </Link>
@@ -54,7 +54,7 @@ export default function Hero() {
         </div>
 
         <div className="reveal reveal-delay-1">
-          <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-card)]">
+          <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-card)] md:mt-0">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-[13px] text-[var(--muted-text)]">
