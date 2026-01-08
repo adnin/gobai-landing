@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
+import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
 import { site } from "@/lib/site";
+
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -57,7 +65,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="min-h-dvh bg-[var(--bg)] text-[var(--text)]">
+      <body
+        className={`${ibmPlexSans.variable} min-h-dvh bg-[var(--bg)] text-[var(--text)]`}
+      >
         <a
           href="#content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-zinc-900 focus:shadow"

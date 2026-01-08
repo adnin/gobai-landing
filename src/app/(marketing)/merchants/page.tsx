@@ -44,7 +44,7 @@ export default function MerchantsPage() {
           />
         </div>
 
-        <div className="mt-8 rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-sm">
+        <div className="mt-8 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-card)]">
           <h3 className="text-base font-semibold tracking-tight">Onboarding checklist</h3>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-[var(--muted-text)]">
             <li>Store details + operating hours</li>

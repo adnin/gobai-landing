@@ -44,7 +44,7 @@ export default function CustomersPage() {
           />
         </div>
 
-        <div className="mt-6 rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-sm">
+        <div className="mt-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-card)]">
           <h3 className="text-base font-semibold tracking-tight">Downloads</h3>
           <p className="mt-2 text-sm text-[var(--muted-text)]">
             Add your Play Store / App Store links when ready.

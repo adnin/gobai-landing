@@ -25,7 +25,7 @@ export default function FAQ({
       {items.map((x) => (
         <details
           key={x.q}
-          className="group rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-sm"
+          className="group rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-card)]"
         >
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold">
             <span>{x.q}</span>

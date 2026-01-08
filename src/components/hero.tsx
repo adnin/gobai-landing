@@ -1,91 +1,123 @@
 import Link from "next/link";
+import { site } from "@/lib/site";
 
 export default function Hero() {
   return (
-    <section className="border-b border-[var(--border)] bg-gradient-to-b from-green-50/70 to-[var(--bg)]">
-      <div className="container-12 grid gap-10 py-14 md:grid-cols-2 md:items-center">
-        <div>
-          <p className="inline-flex items-center rounded-full border border-green-200 bg-white px-3 py-1 text-[13px] font-semibold text-green-700 shadow-sm">
-            Citywide launch • Built for local communities
-          </p>
+    <section className="relative overflow-hidden border-b border-[var(--border)] bg-[var(--bg)]">
+      <div className="pointer-events-none absolute inset-0 hero-backdrop" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 hero-grid" aria-hidden />
+      <div className="container-12 relative grid gap-12 py-16 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+        <div className="reveal">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-[13px] font-semibold text-[var(--muted-text)] shadow-sm">
+            Enterprise mobility platform
+          </div>
 
-          <h1 className="mt-4 max-w-[34rem] font-semibold tracking-tight">
-            Ride, send, and order food — with one GOBAI app
+          <h1 className="mt-4 max-w-[36rem] font-semibold tracking-tight">
+            Citywide mobility and delivery, governed by one platform.
           </h1>
 
-          <p className="mt-4 max-w-[42rem] text-base text-[var(--muted-text)]">
-            A single platform for customers, merchants, and drivers. Designed for
-            clear tracking, fast dispatch, and real support.
+          <p className="mt-4 max-w-[40rem] text-base text-[var(--muted-text)]">
+            GOBAI unifies customer booking, merchant fulfillment, and driver
+            operations with real-time dispatch, audit-ready tracking, and SLA
+            monitoring.
           </p>
 
-          <div className="mt-6 flex flex-wrap gap-2">
+          <div className="mt-6 flex flex-wrap gap-3">
             <Link
-              href="/customers"
-              className="inline-flex h-11 items-center rounded-2xl bg-[var(--primary)] px-4 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-[var(--primary-hover)] active:scale-[0.99]"
+              href={`mailto:${site.contact.email}?subject=GOBAI%20Pilot%20Request`}
+              className="inline-flex h-11 items-center rounded-2xl bg-[var(--primary)] px-5 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-[var(--primary-hover)] active:scale-[0.99]"
             >
-              I’m a Customer
+              Request a pilot
             </Link>
             <Link
-              href="/merchants"
-              className="inline-flex h-11 items-center rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-4 text-sm font-semibold transition duration-200 hover:bg-[var(--muted-surface)] active:scale-[0.99]"
+              href="/#platform"
+              className="inline-flex h-11 items-center rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 text-sm font-semibold transition duration-200 hover:bg-[var(--muted-surface)] active:scale-[0.99]"
             >
-              I’m a Merchant
-            </Link>
-            <Link
-              href="/drivers"
-              className="inline-flex h-11 items-center rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-4 text-sm font-semibold transition duration-200 hover:bg-[var(--muted-surface)] active:scale-[0.99]"
-            >
-              I’m a Driver
+              View platform
             </Link>
           </div>
 
-          <p className="mt-4 text-[13px] text-[var(--muted-text)]">
-            Services: <span className="font-semibold text-[var(--text)]">Ride</span>,{" "}
-            <span className="font-semibold text-[var(--text)]">Parcel</span>,{" "}
-            <span className="font-semibold text-[var(--text)]">Food</span>
-          </p>
+          <div className="mt-6 grid gap-3 text-[13px] text-[var(--muted-text)] sm:grid-cols-3">
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-[color:var(--primary)]/70" aria-hidden />
+              Role-based access
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-[color:var(--primary)]/70" aria-hidden />
+              Policy-controlled pricing
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-[color:var(--primary)]/70" aria-hidden />
+              Audit-ready receipts
+            </div>
+          </div>
         </div>
 
-        <div className="relative">
-          <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-4 shadow-sm">
-            <div className="rounded-2xl bg-[var(--muted-surface)] p-4">
-              <div className="text-sm font-semibold">How it works</div>
-              <div className="mt-4 grid gap-3">
-                <div className="rounded-2xl bg-[var(--surface)] p-4 shadow-sm">
-                  <div className="text-[13px] text-[var(--muted-text)]">Customer</div>
-                  <div className="mt-1 text-sm font-semibold">
-                    Choose Ride / Parcel / Food
-                  </div>
-                  <div className="mt-2 h-2 w-2/3 rounded-full bg-zinc-200/70" />
+        <div className="reveal reveal-delay-1">
+          <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-card)]">
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="text-[13px] text-[var(--muted-text)]">
+                  Operations console
                 </div>
-                <div className="rounded-2xl bg-[var(--surface)] p-4 shadow-sm">
-                  <div className="text-[13px] text-[var(--muted-text)]">Merchant</div>
-                  <div className="mt-1 text-sm font-semibold">
-                    Accept order and prepare
-                  </div>
-                  <div className="mt-2 h-2 w-1/2 rounded-full bg-zinc-200/70" />
+                <div className="text-base font-semibold tracking-tight">
+                  City control center
                 </div>
-                <div className="rounded-2xl bg-[var(--surface)] p-4 shadow-sm">
-                  <div className="text-[13px] text-[var(--muted-text)]">Driver</div>
-                  <div className="mt-1 text-sm font-semibold">
-                    Pick up and deliver with tracking
-                  </div>
-                  <div className="mt-2 h-2 w-3/4 rounded-full bg-zinc-200/70" />
+              </div>
+              <span className="rounded-full bg-[var(--primary-soft)] px-2.5 py-1 text-[13px] font-semibold text-[var(--primary-ink)]">
+                Live
+              </span>
+            </div>
+
+            <div className="mt-4 grid gap-3">
+              <div className="rounded-2xl bg-[var(--muted-surface)] p-4">
+                <div className="text-[13px] text-[var(--muted-text)]">Dispatch health</div>
+                <div className="mt-1 text-sm font-semibold">
+                  Balance demand, supply, and ETAs in real-time.
+                </div>
+                <div className="mt-3 flex flex-wrap gap-2 text-[13px] text-[var(--muted-text)]">
+                  <span className="rounded-full bg-[var(--surface)] px-2 py-1">
+                    Routing
+                  </span>
+                  <span className="rounded-full bg-[var(--surface)] px-2 py-1">
+                    SLA alerts
+                  </span>
+                  <span className="rounded-full bg-[var(--surface)] px-2 py-1">
+                    Surge rules
+                  </span>
+                </div>
+              </div>
+
+              <div className="rounded-2xl bg-[var(--muted-surface)] p-4">
+                <div className="text-[13px] text-[var(--muted-text)]">Compliance trail</div>
+                <div className="mt-1 text-sm font-semibold">
+                  Every action logged for audit readiness.
+                </div>
+                <div className="mt-3 flex flex-wrap gap-2 text-[13px] text-[var(--muted-text)]">
+                  <span className="rounded-full bg-[var(--surface)] px-2 py-1">
+                    Verification
+                  </span>
+                  <span className="rounded-full bg-[var(--surface)] px-2 py-1">
+                    Proof of delivery
+                  </span>
+                  <span className="rounded-full bg-[var(--surface)] px-2 py-1">
+                    Incident notes
+                  </span>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -bottom-6 -left-6 h-24 w-24 rounded-3xl bg-green-600/10"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -top-6 -right-6 h-24 w-24 rounded-3xl bg-green-600/10"
-          />
+            <div className="mt-4 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4">
+              <div className="text-[13px] text-[var(--muted-text)]">Role workspaces</div>
+              <div className="mt-1 text-sm font-semibold">
+                Customer, merchant, and driver flows stay aligned.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
+

@@ -86,11 +86,24 @@ export default function SiteFooter() {
         <div className="container-12 flex flex-col gap-2 py-6 text-sm text-[var(--muted-text)] md:flex-row md:items-center md:justify-between">
           <div>
             © {new Date().getFullYear()} {site.legalName}. All rights reserved.
+            <div className="text-[13px] text-[var(--muted-text)]">
+              Developer: Adnin Onofre
+            </div>
           </div>
           <div className="flex gap-4">
             <a className="hover:text-[var(--text)]" href={site.url}>
               {site.url.replace("https://", "")}
             </a>
+            {site.facebookUrl ? (
+              <a
+                className="hover:text-[var(--text)]"
+                href={site.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Facebook
+              </a>
+            ) : null}
           </div>
         </div>
       </div>

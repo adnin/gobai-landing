@@ -33,19 +33,22 @@ export function ServiceGrid({
         <Link
           key={x.title}
           href={x.href}
-          className="group rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.99]"
+          className="group rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-card)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow-card-hover)] active:scale-[0.99]"
         >
           <div className="flex items-start justify-between gap-3">
             <h3 className="text-base font-semibold tracking-tight">{x.title}</h3>
             {x.badge ? (
-              <span className="rounded-full bg-green-600/10 px-2 py-1 text-[13px] font-semibold text-green-700">
+              <span className="rounded-full bg-[var(--primary-soft)] px-2.5 py-1 text-[13px] font-semibold text-[var(--primary-ink)]">
                 {x.badge}
               </span>
             ) : null}
           </div>
           <p className="mt-2 text-sm text-[var(--muted-text)]">{x.description}</p>
           <div className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--primary)]">
-            Learn more <span className="transition duration-200 group-hover:translate-x-0.5"><ChevronRightIcon /></span>
+            Learn more{" "}
+            <span className="transition duration-200 group-hover:translate-x-0.5">
+              <ChevronRightIcon />
+            </span>
           </div>
         </Link>
       ))}
@@ -61,7 +64,7 @@ export function FeatureCard({
   description: string;
 }) {
   return (
-    <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-sm">
+    <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-card)]">
       <h3 className="text-base font-semibold tracking-tight">{title}</h3>
       <p className="mt-2 text-sm text-[var(--muted-text)]">{description}</p>
     </div>
@@ -82,7 +85,7 @@ export function NewsCard({
   return (
     <Link
       href={href}
-      className="group rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.99]"
+      className="group rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-card)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow-card-hover)] active:scale-[0.99]"
     >
       <div className="text-[13px] font-semibold text-[var(--muted-text)]">{date}</div>
       <div className="mt-2 text-base font-semibold tracking-tight">{title}</div>
