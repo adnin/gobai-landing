@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/*
+  GOBAI Landing Tokens
+  - 8px spacing grid (Tailwind: 2=8px, 4=16px, 6=24px, 8=32px, etc.)
+  - Neutral UI + single brand accent
+*/
+
+:root {
+  /* Semantic colors */
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --muted-surface: #f4f4f5; /* zinc-100-ish */
+  --border: #e4e4e7; /* zinc-200-ish */
+  --text: #18181b; /* zinc-900-ish */
+  --muted-text: #52525b; /* zinc-600-ish */
+
+  --primary: #16a34a; /* green-600 */
+  --primary-hover: #15803d; /* green-700 */
+
+  --focus: rgba(22, 163, 74, 0.25);
+
+  /* Typography */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+
+  /* Type scale (keep calm) */
+  --text-base: 16px;
+  --text-sm: 14px;
+  --text-xs: 13px;
+  --h1: 32px;
+  --h2: 24px;
+  --h3: 20px;
+
+  --lh-body: 1.55;
+  --lh-head: 1.25;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0b0f;
+    --surface: #111113;
+    --muted-surface: #18181b;
+    --border: #27272a;
+    --text: #fafafa;
+    --muted-text: #a1a1aa;
+    --focus: rgba(22, 163, 74, 0.35);
+    color-scheme: dark;
+  }
+}
+
+/* Base element styles */
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-size: var(--text-base);
+    line-height: var(--lh-body);
+  }
+
+  h1 {
+    font-size: var(--h1);
+    line-height: var(--lh-head);
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    font-size: var(--h2);
+    line-height: var(--lh-head);
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-size: var(--h3);
+    line-height: var(--lh-head);
+  }
+
+  a {
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .container-12 {
+    @apply mx-auto max-w-6xl px-4;
+  }
+}
+
+/* Motion: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
