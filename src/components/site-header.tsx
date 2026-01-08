@@ -4,18 +4,14 @@ import { site } from "@/lib/site";
 
 function Mark() {
   return (
-    <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-1 shadow-[var(--shadow-card)]">
-      <div className="flex h-full w-full items-center justify-center rounded-xl bg-[var(--muted-surface)]">
-        <Image
-          src="/logo.png"
-          alt={`${site.name} logo`}
-          width={24}
-          height={24}
-          className="h-6 w-6 object-contain"
-          priority
-        />
-      </div>
-    </div>
+    <Image
+      src="/logo-name.png"
+      alt={`${site.name} logo`}
+      width={48}
+      height={48}
+      className="h-12 w-12 object-contain"
+      priority
+    />
   );
 }
 
