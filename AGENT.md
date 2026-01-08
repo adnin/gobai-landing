@@ -168,11 +168,3 @@ Touch targets:
 
 ---
 
-## Recommended references
-
-- Shopify Polaris
-- Salesforce Lightning Design System
-- Atlassian Design System
-- IBM Carbon
-- Material Design
-- Microsoft Fluent
