@@ -90,10 +90,16 @@ export default function SiteFooter() {
               Developer: Adnin Onofre
             </div>
           </div>
-          <div className="flex gap-4">
+          <div className="flex gap-4 items-center">
             <a className="hover:text-[var(--text)]" href={site.url}>
               {site.url.replace("https://", "")}
             </a>
+            <Link className="hover:text-[var(--text)]" href="/privacy-policy">
+              Privacy Policy
+            </Link>
+            <Link className="hover:text-[var(--text)]" href="/delete-account">
+              Delete Account
+            </Link>
             {site.facebookUrl ? (
               <a
                 className="hover:text-[var(--text)]"
