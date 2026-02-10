@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import { site } from "@/lib/site";
 
 export default function Hero() {
   return (
@@ -21,13 +23,29 @@ export default function Hero() {
             monitoring.
           </p>
 
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href="/#platform"
               className="w-full rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-center text-sm font-semibold transition duration-200 hover:bg-[var(--muted-surface)] active:scale-[0.99] sm:w-auto"
             >
               View platform
             </Link>
+            <a
+              href={site.appUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download GOBAI on Google Play"
+              className="inline-flex w-full items-center justify-center transition duration-200 hover:opacity-90 active:scale-[0.99] sm:w-auto"
+            >
+              <Image
+                src="/google-play-badge.png"
+                alt="Get it on Google Play"
+                width={646}
+                height={250}
+                className="h-auto w-[170px] sm:w-[160px]"
+                sizes="(max-width: 639px) 170px, 160px"
+              />
+            </a>
           </div>
 
           <div className="mt-6 grid gap-3 text-[13px] text-[var(--muted-text)] sm:grid-cols-3">

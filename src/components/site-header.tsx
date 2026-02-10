@@ -102,7 +102,7 @@ export default function SiteHeader({
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Download GOBAI on Google Play"
-              className="inline-flex w-full max-w-[220px] items-center justify-center rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-3 py-2 shadow-sm transition duration-200 hover:bg-[var(--muted-surface)] active:scale-[0.99] md:w-auto md:max-w-none md:border-0 md:bg-transparent md:p-0 md:shadow-none md:hover:bg-transparent md:hover:opacity-90"
+              className="inline-flex w-full items-center justify-center transition duration-200 hover:opacity-90 active:scale-[0.99] md:w-auto"
             >
               <Image
                 src="/google-play-badge.png"
