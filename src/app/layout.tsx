@@ -75,7 +75,10 @@ export default function RootLayout({
           Skip to content
         </a>
 
-        <SiteHeader />
+        <SiteHeader
+          siteName={site.name}
+          appUrl={site.appUrl}
+        />
         <main id="content">{children}</main>
         <SiteFooter />
       </body>

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { site } from "@/lib/site";
 
 export default function Hero() {
   return (
@@ -22,13 +21,7 @@ export default function Hero() {
             monitoring.
           </p>
 
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            <Link
-              href={`mailto:${site.contact.email}?subject=GOBAI%20Pilot%20Request`}
-              className="w-full rounded-2xl bg-[var(--primary)] px-5 py-3 text-center text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-[var(--primary-hover)] active:scale-[0.99] sm:w-auto"
-            >
-              Request a pilot
-            </Link>
+          <div className="mt-6">
             <Link
               href="/#platform"
               className="w-full rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-center text-sm font-semibold transition duration-200 hover:bg-[var(--muted-surface)] active:scale-[0.99] sm:w-auto"

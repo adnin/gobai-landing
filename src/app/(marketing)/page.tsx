@@ -240,15 +240,9 @@ export default function HomePage() {
         id="get-started"
         eyebrow="Get started"
         title="One platform. Three roles. One city at a time."
-        subtitle="Start a pilot or explore the role-specific apps."
+        subtitle="Explore the role-specific apps."
       >
         <div className="flex flex-wrap gap-2">
-          <a
-            href={`mailto:${site.contact.email}?subject=GOBAI%20Pilot%20Request`}
-            className="inline-flex h-11 items-center rounded-2xl bg-[var(--primary)] px-5 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-[var(--primary-hover)] active:scale-[0.99]"
-          >
-            Request a pilot
-          </a>
           <a
             href="/customers"
             className="inline-flex h-11 items-center rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 text-sm font-semibold transition duration-200 hover:bg-[var(--muted-surface)] active:scale-[0.99]"

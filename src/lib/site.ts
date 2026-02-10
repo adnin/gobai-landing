@@ -9,7 +9,12 @@ const readEnv = (key: string, fallback: string) => {
 const normalizeUrl = (value: string) => value.replace(/\/$/, "");
 
 const siteUrl = normalizeUrl(readEnv("NEXT_PUBLIC_SITE_URL", defaultSiteUrl));
-const appUrl = normalizeUrl(readEnv("NEXT_PUBLIC_APP_URL", `${siteUrl}/customers`));
+const appUrl = normalizeUrl(
+  readEnv(
+    "NEXT_PUBLIC_APP_URL",
+    "https://play.google.com/store/apps/details?id=com.adnin.gobai"
+  )
+);
 const rawFacebookUrl = readEnv("NEXT_PUBLIC_FACEBOOK_URL", "");
 const facebookUrl = rawFacebookUrl ? normalizeUrl(rawFacebookUrl) : "";
 

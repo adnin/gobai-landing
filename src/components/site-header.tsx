@@ -3,13 +3,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { site } from "@/lib/site";
 
-function Mark() {
+type SiteHeaderProps = {
+  siteName: string;
+  appUrl: string;
+};
+
+function Mark({ siteName }: { siteName: string }) {
   return (
     <Image
       src="/logo-name.png"
-      alt={`${site.name} logo`}
+      alt={`${siteName} logo`}
       width={48}
       height={48}
       className="h-12 w-12 object-contain"
@@ -18,7 +22,10 @@ function Mark() {
   );
 }
 
-export default function SiteHeader() {
+export default function SiteHeader({
+  siteName,
+  appUrl,
+}: SiteHeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
@@ -33,12 +40,12 @@ export default function SiteHeader() {
 
   return (
     <header className="relative sticky top-0 z-50 border-b border-[var(--border)] bg-[color:var(--bg)]/90 backdrop-blur">
-      <div className="container-12 flex flex-col gap-3 py-3 md:flex-row md:items-center md:justify-between">
+      <div className="container-12 flex flex-col gap-2 py-3 md:flex-row md:items-center md:justify-between md:gap-3">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <Mark />
+            <Mark siteName={siteName} />
             <div className="leading-tight">
-              <div className="text-sm font-semibold tracking-tight">{site.name}</div>
+              <div className="text-sm font-semibold tracking-tight">{siteName}</div>
               <div className="text-[13px] text-[var(--muted-text)]">
                 Mobility and delivery platform
               </div>
@@ -89,18 +96,22 @@ export default function SiteHeader() {
             ))}
           </nav>
 
-          <div className="flex w-full flex-col gap-2 sm:flex-row sm:items-center sm:justify-end md:w-auto">
-            <Link
-              href={`mailto:${site.contact.email}?subject=GOBAI%20Pilot%20Request`}
-              className="hidden h-11 items-center rounded-2xl border border-[var(--border)] px-4 text-sm font-semibold text-[var(--text)] transition duration-200 hover:bg-[var(--muted-surface)] active:scale-[0.99] md:inline-flex"
-            >
-              Request pilot
-            </Link>
+          <div className="flex w-full items-center justify-center md:w-auto md:justify-end">
             <a
-              href={site.appUrl}
-              className="w-full rounded-2xl bg-[var(--primary)] px-5 py-3 text-center text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-[var(--primary-hover)] active:scale-[0.99] sm:w-auto"
+              href={appUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download GOBAI on Google Play"
+              className="inline-flex w-full max-w-[220px] items-center justify-center rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-3 py-2 shadow-sm transition duration-200 hover:bg-[var(--muted-surface)] active:scale-[0.99] md:w-auto md:max-w-none md:border-0 md:bg-transparent md:p-0 md:shadow-none md:hover:bg-transparent md:hover:opacity-90"
             >
-              Get the App
+              <Image
+                src="/google-play-badge.png"
+                alt="Get it on Google Play"
+                width={646}
+                height={250}
+                className="h-auto w-[170px] md:w-[150px]"
+                sizes="(max-width: 767px) 170px, 150px"
+              />
             </a>
           </div>
         </div>
@@ -120,13 +131,6 @@ export default function SiteHeader() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href={`mailto:${site.contact.email}?subject=GOBAI%20Pilot%20Request`}
-                onClick={() => setMenuOpen(false)}
-                className="text-base font-semibold text-[var(--text)] hover:text-[var(--primary)]"
-              >
-                Request pilot
-              </Link>
             </nav>
           </div>
         </div>
